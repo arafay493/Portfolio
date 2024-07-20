@@ -2,32 +2,59 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@layer base {
+  body {
+    @apply bg-[#121212] text-[#F9FAFB];
   }
-}
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-bold;
+  }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  h1 {
+    @apply text-4xl sm:text-5xl md:text-6xl;
+  }
+
+  h2 {
+    @apply text-3xl sm:text-4xl;
+  }
+
+  h3 {
+    @apply text-2xl sm:text-4xl;
+  }
+
+  h4 {
+    @apply text-xl sm:text-3xl;
+  }
+
+  h5 {
+    @apply text-lg sm:text-xl;
+  }
+
+  section {
+    @apply bg-[#1E1E1F] border-2 border-[#B86CF9] rounded-xl;
+  }
+
+  li {
+    @apply cursor-pointer transition-all duration-300 flex justify-center items-center gap-2 text-[12px] sm:text-[16px];
+  }
+
+  li:hover {
+    @apply text-[#B86CF9];
+  }
+
+  button {
+    @apply shadow-xl shadow-gray-400 rounded-xl uppercase bg-gradient-to-r from-['#5651e5'] to-["#709dff"];
   }
 }
